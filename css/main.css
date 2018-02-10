@@ -3,8 +3,8 @@
     padding:20px;
 }
 #main-chart {
-    height:1000px;
-    width:800px;
+    height:800px;
+    width:100%;
 }
 .mini-chart {
     height:240px;
