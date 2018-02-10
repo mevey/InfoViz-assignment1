@@ -3,10 +3,19 @@
     padding:20px;
 }
 #main-chart {
-    height:800px;
+    height:520px;
     width:100%;
 }
 .mini-chart {
-    height:240px;
+    height:300px;
     width:100%;
+}
+p {
+    padding:10px 20px !important;
+    border:1px solid #ccc !important;
+}
+td, th {
+    height:70px;
+    padding:15px;
+    text-align:center;
 }
