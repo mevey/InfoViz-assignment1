@@ -1,0 +1,12 @@
+.wrapper {
+    width:100%;
+    padding:20px;
+}
+#main-chart {
+    height:1000px;
+    width:800px;
+}
+.mini-chart {
+    height:240px;
+    width:100%;
+}
