@@ -1,59 +1,59 @@
 DATA = [
     {
-        "title": "Surgical Infection",
+        "title": "Surgical Infections",
         "operational_errors_data": [7200,6500,5000,3000],
         "mortality_rate_data": [45,20,10,5],
         "max":7200,
         "color": Highcharts.getOptions().colors[0]
     },
     {
-        "title": "Catheter Infection",
+        "title": "Catheter Infections",
         "operational_errors_data": [4500,4000,2400,500],
         "mortality_rate_data": [15,10,2,2],
         "max":7200,
-        "color": Highcharts.getOptions().colors[1]
+        "color": Highcharts.getOptions().colors[0]
     },
     {
-        "title": "Surgical Error",
+        "title": "Surgical Errors",
         "operational_errors_data": [3300,3200,3000,1000],
         "mortality_rate_data": [20,10,5,0],
         "max":7200,
-        "color": Highcharts.getOptions().colors[2]
+        "color": Highcharts.getOptions().colors[0]
     },
     {
-        "title": "Incorrect Dosage",
+        "title": "Incorrect Dosage Errors",
         "operational_errors_data": [1100,1000,400,100],
         "mortality_rate_data": [30,20,15,5],
         "max":7200,
-        "color": Highcharts.getOptions().colors[3]
+        "color": Highcharts.getOptions().colors[0]
     },
     {
         "title": "Incorrect Medication",
         "operational_errors_data": [900,750,500,400],
         "mortality_rate_data": [20,10,5,10],
         "max":7200,
-        "color": Highcharts.getOptions().colors[4]
+        "color": Highcharts.getOptions().colors[0]
     },
     {
         "title": "Misdiagnosis",
         "operational_errors_data": [1000,900,950,100],
         "mortality_rate_data": [55,40,5,5],
         "max":7200,
-        "color": Highcharts.getOptions().colors[5]
+        "color": Highcharts.getOptions().colors[0]
     },
     {
-        "title": "Delay in Treatment",
+        "title": "Delays in Treatment",
         "operational_errors_data": [50,50,50,50],
         "mortality_rate_data": [15,10,10,4],
         "max":1000,
-        "color": Highcharts.getOptions().colors[6]
+        "color": "red"
     },
     {
-        "title": "IVError",
+        "title": "IV Errors",
         "operational_errors_data": [50,50,50,50],
         "mortality_rate_data": [10,10,5,5],
         "max":1000,
-        "color": Highcharts.getOptions().colors[7]
+        "color": "red"
     },
 ]
 
@@ -150,13 +150,13 @@ function get_options(data) {
             title: {
                 text: 'Operational Errors',
                 style: {
-                    color: Highcharts.getOptions().colors[0]
+                    color: data["color"]
                 }
             },
             max: data['max'],
             labels: {
                 style: {
-                    color: Highcharts.getOptions().colors[0]
+                    color:data["color"]
                 }
             },
             opposite: true
@@ -170,11 +170,13 @@ function get_options(data) {
             type: 'column',
             yAxis: 1,
             data: data['operational_errors_data'],
+            color: data["color"]
 
         }, {
             name: 'Mortality Rate',
             type: 'spline',
             data: data['mortality_rate_data'],
+            color: Highcharts.getOptions().colors[1]
         }]
     }
 }
@@ -184,6 +186,12 @@ for (var i = 0; i < DATA.length; i++) {
     options = get_options(DATA[i])
     Highcharts.chart('mini-chart-' + (i + 1), options);
 }
+
+var chart = $('#mini-chart-6').highcharts();
+chart.series[0].data[2].update({color:'red'});
+var chart = $('#mini-chart-5').highcharts();
+chart.series[1].data[3].update({color:'red'});
+
 
 //Design 2
 categories = ["2012", "2013", "2014", "2015"]

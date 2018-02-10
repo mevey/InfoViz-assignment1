@@ -3,7 +3,7 @@
     padding:20px;
 }
 #main-chart {
-    height:520px;
+    height:600px;
     width:100%;
 }
 .mini-chart {
@@ -18,4 +18,24 @@ td, th {
     height:70px;
     padding:15px;
     text-align:center;
+}
+.chart, .mini-chart {
+    padding:30px;
+}
+.boxed {
+    padding:0px;
+    margin:0px;
+    border:1px solid #ccc;
+}
+.red-box, .red-circle {
+    height:20px;
+    width:20px;
+    background-color:red;
+    display:inline-block;
+    vertical-align: middle;
+}
+.red-circle {
+    height:10px;
+    width:10px;
+    border-radius:5px;
 }
