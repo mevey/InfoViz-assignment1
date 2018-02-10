@@ -245,3 +245,52 @@ main_chart_options = {
     series: barchart_data
 }
 Highcharts.chart('main-chart-2', main_chart_options);
+
+//Design 3
+categories = []
+barchart_data = []
+d_2012 = [], d_2013 = [], d_2014 = [], d_2015 = []
+for(i in DATA) {
+    categories.push(DATA[i].title)
+    d_2012.push(DATA[i].operational_errors_data[0])
+    d_2013.push(DATA[i].operational_errors_data[1])
+    d_2014.push(DATA[i].operational_errors_data[2])
+    d_2015.push(DATA[i].operational_errors_data[3])
+}
+barchart_data.push({"name": "2012", "data": d_2012})
+barchart_data.push({"name": "2013", "data": d_2013})
+barchart_data.push({"name": "2014", "data": d_2014})
+barchart_data.push({"name": "2015", "data": d_2015})
+
+main_chart_options = {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Operational errors between 2012-2015'
+    },
+
+    xAxis: {
+        categories: categories,
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Number of operational errors'
+        }
+    },
+    tooltip: {
+//        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: barchart_data
+}
+Highcharts.chart('main-chart-3', main_chart_options);
