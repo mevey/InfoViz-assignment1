@@ -1,5 +1,5 @@
-var operational_error_color =  "#95A5A6"
-var mortality_rate_color = "#446CB3"
+var operational_error_color =  Highcharts.getOptions().colors[0]
+var mortality_rate_color = Highcharts.getOptions().colors[1]
 DATA = [
     {
         "title": "Surgical Infections",
