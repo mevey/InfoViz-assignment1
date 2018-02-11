@@ -168,7 +168,7 @@ function get_options(data) {
 
         series: [{
             name: 'Operational Errors',
-            type: 'column',
+            type: 'spline',
             yAxis: 1,
             data: data['operational_errors_data'],
             color: data["color"]
