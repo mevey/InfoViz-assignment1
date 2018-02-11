@@ -1,51 +1,53 @@
+var operational_error_color =  "#95A5A6"
+var mortality_rate_color = "#446CB3"
 DATA = [
     {
         "title": "Surgical Infections",
         "operational_errors_data": [7200,6500,5000,3000],
         "mortality_rate_data": [45,20,10,5],
-        "color": Highcharts.getOptions().colors[0]
+        "color": operational_error_color
     },
     {
         "title": "Catheter Infections",
         "operational_errors_data": [4500,4000,2400,500],
         "mortality_rate_data": [15,10,2,2],
-        "color":  Highcharts.getOptions().colors[0]
+        "color": operational_error_color
     },
     {
         "title": "Surgical Errors",
         "operational_errors_data": [3300,3200,3000,1000],
         "mortality_rate_data": [20,10,5,0],
-        "color": Highcharts.getOptions().colors[0]
+        "color": operational_error_color
     },
     {
         "title": "Incorrect Dosage Errors",
         "operational_errors_data": [1100,1000,400,100],
         "mortality_rate_data": [30,20,15,5],
-        "color":  Highcharts.getOptions().colors[0]
+        "color":  operational_error_color
     },
     {
         "title": "Incorrect Medication",
         "operational_errors_data": [900,750,500,400],
         "mortality_rate_data": [20,10,5,10],
-        "color":Highcharts.getOptions().colors[0]
+        "color":operational_error_color
     },
     {
         "title": "Misdiagnosis",
         "operational_errors_data": [1000,900,950,100],
         "mortality_rate_data": [55,40,5,5],
-        "color": Highcharts.getOptions().colors[0]
+        "color": operational_error_color
     },
     {
         "title": "Delays in Treatment",
         "operational_errors_data": [50,50,50,50],
         "mortality_rate_data": [15,10,10,4],
-        "color": Highcharts.getOptions().colors[0]
+        "color": operational_error_color
     },
     {
         "title": "IV Errors",
         "operational_errors_data": [50,50,50,50],
         "mortality_rate_data": [10,10,5,5],
-        "color": Highcharts.getOptions().colors[0]
+        "color": operational_error_color
     },
 ]
 
@@ -63,26 +65,26 @@ main_chart_options = {
     yAxis: [{ // Primary yAxis
         labels: {
             style: {
-                color: Highcharts.getOptions().colors[1]
+                color: mortality_rate_color
             }
         },
         title: {
             text: 'Average mortality rate',
             style: {
-                color: Highcharts.getOptions().colors[1]
+                color: mortality_rate_color
             }
         }
     }, { // Secondary yAxis
         title: {
             text: 'Total operational errors',
             style: {
-                color: Highcharts.getOptions().colors[0]
+                color: operational_error_color
             }
         },
         labels: {
             format: '{value}',
             style: {
-                color: Highcharts.getOptions().colors[0]
+                color: operational_error_color
             }
         },
         opposite: true
@@ -104,14 +106,13 @@ main_chart_options = {
         type: 'column',
         yAxis: 1,
         data: [18100, 16450,12350,5200],
+         color: operational_error_color
 
     }, {
         name: 'Mortality Rates',
         type: 'spline',
         data: [26.25, 16.25, 7.125, 4.5],
-        tooltip: {
-            valueSuffix: ''
-        }
+        color: mortality_rate_color
     }]
 }
 
@@ -129,14 +130,14 @@ function get_options(data) {
         yAxis: [{ // Primary yAxis
             labels: {
                 style: {
-                    color: Highcharts.getOptions().colors[1]
+                    color: mortality_rate_color
                 }
             },
             max: 55,
             title: {
                 text: 'Mortality Rates',
                 style: {
-                    color: Highcharts.getOptions().colors[1]
+                    color: mortality_rate_color
                 }
             }
         }, { // Secondary yAxis
@@ -163,13 +164,13 @@ function get_options(data) {
             type: 'spline',
             yAxis: 1,
             data: data['operational_errors_data'],
-            color: data["color"]
+            color: operational_error_color
 
         }, {
             name: 'Mortality Rate',
             type: 'spline',
             data: data['mortality_rate_data'],
-            color: Highcharts.getOptions().colors[1]
+            color: mortality_rate_color
         }]
     }
 }
