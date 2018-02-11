@@ -140,7 +140,7 @@ function get_options(data) {
                     color: Highcharts.getOptions().colors[1]
                 }
             },
-            max: 45,
+            max: 55,
             title: {
                 text: 'Mortality Rates',
                 style: {
