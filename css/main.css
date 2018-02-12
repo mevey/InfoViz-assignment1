@@ -8,15 +8,15 @@
     padding:10px;
 }
 #main-chart {
-    height:600px;
+    height:580px;
     width:100%;
 }
 .mini-chart {
-    height:300px;
+    height:256px;
     width:100%;
 }
 p {
-    padding:10px 20px !important;
+    padding:5px 10px !important;
     border:1px solid #ccc !important;
     background:#fff;
     color:#212121;
@@ -51,4 +51,19 @@ td, th {
 }
 #main-chart-3: {
     height:600px;
+}
+.title {
+   margin-top:10px;
+}
+.title .drop {
+    color:#fff;
+    background:blue;
+    padding:5px;
+    display:none;
+}
+.title .drop.mort {
+    color:#fff;
+    background:#000;
+    padding:5px;
+    display:none;
 }
