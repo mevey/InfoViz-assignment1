@@ -3,42 +3,49 @@ var mortality_rate_color = Highcharts.getOptions().colors[1]
 DATA = [
     {
         "title": "Surgical Infections <span class='drop'> 58% drop</span><span class='drop mort'> 89% drop</span>",
+        "blob": "With 10 hour trainings the errors reduced by 58% and mortality reduced by 89%",
         "operational_errors_data": [7200,6500,5000,3000],
         "mortality_rate_data": [45,20,10,5],
         "color": operational_error_color
     },
     {
-        "title": "Catheter Infections <span class='drop'> 89% drop</span><span class='drop mort'> 97% drop</span>",
+        "title": "Catheter Infections <span class='drop'> 89% drop</span><span class='drop mort'> 87% drop</span>",
+        "blob": "With 5 hour trainings the errors reduced by 89% and mortality reduced by 87%",
         "operational_errors_data": [4500,4000,2400,500],
         "mortality_rate_data": [15,10,2,2],
         "color": operational_error_color
     },
     {
         "title": "Surgical Errors <span class='drop'> 70% drop</span><span class='drop mort'> 100% drop</span>",
+        "blob": "With 50 hour trainings the errors reduced by 70% and mortality reduced by 100%",
         "operational_errors_data": [3300,3200,3000,1000],
         "mortality_rate_data": [20,10,5,0],
         "color": operational_error_color
     },
     {
         "title": "Incorrect Dosage Errors <span class='drop'> 91% drop</span><span class='drop mort'> 83% drop</span>",
+        "blob": "With 5 hour trainings the errors reduced by 91% and mortality reduced by 83%",
         "operational_errors_data": [1100,1000,400,100],
         "mortality_rate_data": [30,20,15,5],
         "color":  operational_error_color
     },
     {
         "title": "Incorrect Medication <span class='drop'> 56% drop</span><span class='drop mort'> 50% drop</span>",
+        "blob": "With 10 hour trainings the errors reduced by 56% and mortality reduced by 50%",
         "operational_errors_data": [900,750,500,400],
         "mortality_rate_data": [20,10,5,10],
         "color":operational_error_color
     },
     {
         "title": "Misdiagnosis <span class='drop'> 90% drop</span><span class='drop mort'> 73% drop</span>",
+        "blob": "With 20 hour trainings the errors reduced by 90% and mortality reduced by 73%",
         "operational_errors_data": [1000,900,950,100],
         "mortality_rate_data": [55,40,5,5],
         "color": operational_error_color
     },
     {
         "title": "Delays in Treatment <span class='drop'> 0% drop</span><span class='drop mort'> 91% drop</span>",
+        "blob": "With 7 hour trainings the errors reduced by 0% and mortality reduced by 91%",
         "operational_errors_data": [50,50,50,50],
         "mortality_rate_data": [15,10,10,4],
         "color": operational_error_color,
@@ -46,6 +53,7 @@ DATA = [
     },
     {
         "title": "IV Errors <span class='drop'> 0% drop</span><span class='drop mort'> 50% drop</span>",
+        "blob": "With 15 hour trainings the errors reduced by 0% and mortality reduced by 50%",
         "operational_errors_data": [50,50,50,50],
         "mortality_rate_data": [10,10,5,5],
         "color": operational_error_color,
@@ -59,7 +67,7 @@ main_chart_options = {
         zoomType: 'xy'
     },
     title: {
-        text: 'Total operational errors between 2012-2015'
+        text: ''
     },
     xAxis: [{
         categories: ['2012', '2013', '2014', '2015'],
@@ -183,7 +191,7 @@ Highcharts.chart('main-chart', main_chart_options);
 for (var i = 0; i < DATA.length; i++) {
     options = get_options(DATA[i])
     Highcharts.chart('mini-chart-' + (i + 1), options);
-    $("#title-" + (i + 1)).html(DATA[i]['title'])
+    $("#title-" + (i + 1)).html(DATA[i]['title'] + "<small>" + DATA[i]['blob'] + "</small>")
 }
 
 var chart = $('#mini-chart-6').highcharts();

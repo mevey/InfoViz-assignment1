@@ -1,6 +1,6 @@
 .wrapper {
     width:100%;
-    padding:20px;
+    padding:10px;
 }
 .header {
     color:#212121;
@@ -8,11 +8,11 @@
     padding:10px;
 }
 #main-chart {
-    height:580px;
+    height:600px;
     width:100%;
 }
 .mini-chart {
-    height:256px;
+    height:270px;
     width:100%;
 }
 p {
@@ -54,6 +54,7 @@ td, th {
 }
 .title {
    margin-top:10px;
+   font-weight:500;
 }
 .title .drop {
     color:#fff;
@@ -66,4 +67,8 @@ td, th {
     background:#000;
     padding:5px;
     display:none;
+}
+.title small {
+    color:#888;
+    display:block;
 }
